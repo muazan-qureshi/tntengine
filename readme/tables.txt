@@ -29,3 +29,22 @@ CREATE TABLE status
 	status_id int,
     status_type varchar(20)
 )
+
+
+Packages Table
+
+create table packages
+(
+    pkg_id int auto_increment PRIMARY KEY,
+    pkg_name varchar(200),
+    pkg_createBY int,
+    pkg_createDT timestamp,
+    pkg_from varchar(50),
+    pkg_to varchar(50),
+    pkg_price varchar(11),
+    pkg_day varchar(10),
+    pkg_night varchar(10),
+    pkg_image varchar(1000),
+    pkg_description varchar(100),
+    pkg_person varchar(10)
+)

@@ -6,9 +6,9 @@ if (!$_SESSION['liveagent']) {
 // $_SESSION['liveadmin'] = $live;
 
 foreach ($object->user_live() as $live) {
-    $livename = $live['fullname'];
-    $liveemail = $live['email'];
-    $livepic = $live['profilepicture'];
+    $livename = $live['agent_fname'];
+    $liveemail = $live['agent_email'];
+    $livepic = $live['agent_image'];
 }
 
 
@@ -25,7 +25,7 @@ foreach ($object->user_live() as $live) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Auction Travelism</title>
+    <title>Trip n Tour</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

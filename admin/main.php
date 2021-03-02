@@ -130,6 +130,14 @@ class tripntour
 	// add agent function end here
 	
 
+	// Get packages for admin panel
+	function get_pkgs()
+	{
+		$sql = "Select * from packages";
+		$query = mysqli_query($this->connection(), $sql);
+		return $query;
+	}
+
 
 }// Class End
 #class tripntoue end here
