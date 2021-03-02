@@ -1,0 +1,31 @@
+Admin Table:
+
+CREATE TABLE admins
+(   
+    admin_id int AUTO_INCREMENT PRIMARY KEY,
+    admin_fname varchar(50),
+    admin_uname varchar(50) UNIQUE,
+    admin_email varchar(50) UNIQUE,
+    admin_phone varchar(20) UNIQUE,
+    admin_cnic varchar(20) UNIQUE,
+    admin_password varchar(50),
+    admin_fathername varchar(50),
+    admin_gender varchar(10),
+    admin_dob date,
+    admin_image varchar(500),
+    createDT timestamp,
+    admin_address varchar(500),
+    status int  
+)
+
+Agents Table
+
+CREATE TABLE agents ( agent_id int AUTO_INCREMENT PRIMARY KEY, agent_fname varchar(50), agent_uname varchar(50) UNIQUE, agent_email varchar(50) UNIQUE, agent_phone varchar(20) UNIQUE, agent_cnic varchar(20) UNIQUE, agent_password varchar(50), agent_fathername varchar(50), agent_gender varchar(10), agent_dob date, agent_image varchar(500), createDT timestamp, createBY int, agent_address varchar(500), status int )
+
+
+Status Table:
+CREATE TABLE status 
+(
+	status_id int,
+    status_type varchar(20)
+)
