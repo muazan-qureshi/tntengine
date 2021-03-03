@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2021 at 07:04 PM
+-- Generation Time: Mar 03, 2021 at 06:35 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -66,6 +66,7 @@ CREATE TABLE `agents` (
   `agent_cnic` varchar(20) DEFAULT NULL,
   `agent_password` varchar(50) DEFAULT NULL,
   `agent_fathername` varchar(50) DEFAULT NULL,
+  `agent_company` varchar(200) NOT NULL,
   `agent_gender` varchar(10) DEFAULT NULL,
   `agent_dob` date DEFAULT NULL,
   `agent_image` varchar(500) DEFAULT NULL,
@@ -80,9 +81,10 @@ CREATE TABLE `agents` (
 -- Dumping data for table `agents`
 --
 
-INSERT INTO `agents` (`agent_id`, `agent_fname`, `agent_uname`, `agent_email`, `agent_phone`, `agent_cnic`, `agent_password`, `agent_fathername`, `agent_gender`, `agent_dob`, `agent_image`, `createDT`, `createBY`, `agent_address`, `agent_location`, `status`) VALUES
-(1, 'Shahzaib Khan Afridi', 'shaxi66221', 'shaxi66221@gmail.com', '+923125557075', '45698-9632587-0', '123456*Sa', 'Muhammad Ayub Khan', 'Male', '1995-07-08', 'IMG_20201210_170522_1.jpg', '2021-03-02 03:06:38', 1, 'Nazimabad Karachi', 'Karachi, Pakistan (KHI)', 1),
-(2, 'Umair Warsi', 'umair_warsi', 'umair.globalbiz@gmail.com', '+923086565652', '45632-4561230-0', '123456*Uw', 'Muhammad Ali ', 'Male', '1993-02-02', 'IMG_20201210_165127.jpg', '2021-03-02 03:23:04', 1, 'Gulshan Karachi.', 'Islamabad, Pakistan (ICT)', 0);
+INSERT INTO `agents` (`agent_id`, `agent_fname`, `agent_uname`, `agent_email`, `agent_phone`, `agent_cnic`, `agent_password`, `agent_fathername`, `agent_company`, `agent_gender`, `agent_dob`, `agent_image`, `createDT`, `createBY`, `agent_address`, `agent_location`, `status`) VALUES
+(1, 'Shahzaib Khan Afridi', 'shaxi66221', 'shaxi66221@gmail.com', '+923125557075', '45698-9632587-0', '123456*Sa', 'Muhammad Ayub Khan', 'shaxi & travels', 'Male', '1995-07-08', 'IMG_20201210_170522_1.jpg', '2021-03-03 05:08:14', 1, 'Nazimabad Karachi', 'Karachi, Pakistan (KHI)', 1),
+(2, 'Umair Warsi', 'umair_warsi', 'umair.globalbiz@gmail.com', '+923086565652', '45632-4561230-0', '123456*Uw', 'Muhammad Ali ', 'mas travrel', 'Male', '1993-02-02', 'IMG_20201210_165127.jpg', '2021-03-03 05:08:24', 1, 'Gulshan Karachi.', 'Islamabad, Pakistan (ICT)', 1),
+(3, 'Jawwad Siddiqui', 'jawwad', 'jawwad@gmail.com', '+923012323236', '45201-8989898-9', '123456*Js', 'Jawwad Abu', 'jawwad & sons', 'Male', '1999-09-09', 'IMG_20201210_175649.jpg', '2021-03-03 05:08:32', 1, 'Buffer zone, Karachi.', 'Lahore, Pakistan (LHR)', 1);
 
 -- --------------------------------------------------------
 
@@ -111,7 +113,8 @@ CREATE TABLE `packages` (
 --
 
 INSERT INTO `packages` (`pkg_id`, `pkg_name`, `pkg_createBY`, `pkg_location`, `pkg_createDT`, `pkg_from`, `pkg_to`, `pkg_price`, `pkg_day`, `pkg_night`, `pkg_image`, `pkg_description`, `pkg_person`) VALUES
-(1, '7 Days in Turkey ', 1, 'Turkey', '2021-03-02 17:42:10', 'Karachi (KHI)', 'Istanbul (ISN)', '98000', '8', '7', '[\"4c07486b361d74a4bfd4ae9e298a5e19.jpg\",\"449137 - Copy.jpg\",\"Hagia-Sophia-Istanbul - Copy.jpg\",\"pexels-dziana-hasanbekava-5480736.jpg\",\"turkey-country-culture-wallpaper-3.jpg\"]', 'THIS PACKAGE IS FOR 2 PEOPLE TRAVELLING TOGETHER AND INCLUDES:\r\n\r\n10 nights hire of a powered site a', '2');
+(1, '7 Days in Turkey ', 1, 'Turkey', '2021-03-02 17:42:10', 'Karachi (KHI)', 'Istanbul (ISN)', '98000', '8', '7', '[\"4c07486b361d74a4bfd4ae9e298a5e19.jpg\",\"449137 - Copy.jpg\",\"Hagia-Sophia-Istanbul - Copy.jpg\",\"pexels-dziana-hasanbekava-5480736.jpg\",\"turkey-country-culture-wallpaper-3.jpg\"]', 'THIS PACKAGE IS FOR 2 PEOPLE TRAVELLING TOGETHER AND INCLUDES:\r\n\r\n10 nights hire of a powered site a', '2'),
+(2, 'Miami Beach SPA', 2, 'North America', '2021-03-03 03:52:11', 'Islamabad', 'Miami', '150000', '5', '4', '[\"pexels-bella-white-635279.jpg\",\"pexels-irina-iriser-2781760.jpg\",\"pexels-pok-rie-2049422.jpg\",\"Untitled-1.jpg\"]', 'Offer includes:\r\nDaily Breakfast for two\r\n$50 Spa credit (1 per stay)\r\n15% off at Bloomingdales in-s', '1');
 
 -- --------------------------------------------------------
 
@@ -178,13 +181,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `agents`
 --
 ALTER TABLE `agents`
-  MODIFY `agent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `agent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `packages`
 --
 ALTER TABLE `packages`
-  MODIFY `pkg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pkg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
