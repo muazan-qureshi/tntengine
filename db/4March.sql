@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2021 at 06:44 AM
+-- Generation Time: Mar 04, 2021 at 07:16 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -90,6 +90,36 @@ INSERT INTO `agents` (`agent_id`, `agent_fname`, `agent_uname`, `agent_email`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `clients`
+--
+
+CREATE TABLE `clients` (
+  `cl_id` int(11) NOT NULL,
+  `cl_fname` varchar(50) DEFAULT NULL,
+  `cl_email` varchar(50) DEFAULT NULL,
+  `cl_password` varchar(50) DEFAULT NULL,
+  `cl_phone` varchar(20) DEFAULT NULL,
+  `cl_createDT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `client_query`
+--
+
+CREATE TABLE `client_query` (
+  `cq_id` int(11) NOT NULL,
+  `cq_name` varchar(50) DEFAULT NULL,
+  `cq_email` varchar(50) DEFAULT NULL,
+  `cq_subject` varchar(100) DEFAULT NULL,
+  `cq_message` varchar(1000) DEFAULT NULL,
+  `cq_createDT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `packages`
 --
 
@@ -163,6 +193,18 @@ ALTER TABLE `agents`
   ADD UNIQUE KEY `agent_cnic` (`agent_cnic`);
 
 --
+-- Indexes for table `clients`
+--
+ALTER TABLE `clients`
+  ADD PRIMARY KEY (`cl_id`);
+
+--
+-- Indexes for table `client_query`
+--
+ALTER TABLE `client_query`
+  ADD PRIMARY KEY (`cq_id`);
+
+--
 -- Indexes for table `packages`
 --
 ALTER TABLE `packages`
@@ -183,6 +225,18 @@ ALTER TABLE `admins`
 --
 ALTER TABLE `agents`
   MODIFY `agent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `clients`
+--
+ALTER TABLE `clients`
+  MODIFY `cl_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `client_query`
+--
+ALTER TABLE `client_query`
+  MODIFY `cq_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `packages`

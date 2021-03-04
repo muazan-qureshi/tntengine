@@ -48,3 +48,26 @@ create table packages
     pkg_description varchar(100),
     pkg_person varchar(10)
 )
+
+client query table (Client queries from WEB)
+
+create TABLE client_query
+(
+	cq_id int AUTO_INCREMENT PRIMARY KEY,
+    cq_name varchar(50),
+    cq_email varchar(50),
+    cq_subject varchar(100),
+    cq_message varchar(1000),
+    cq_createDT timestamp
+)
+
+client login from WEB
+create TABLE clients 
+(
+ 	cl_id int AUTO_INCREMENT Primary key,
+    cl_fname varchar(50),
+    cl_email varchar(50),
+    cl_password varchar(50),
+    cl_phone varchar(20),
+    cl_createDT timestamp
+)
