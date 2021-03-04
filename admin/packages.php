@@ -36,12 +36,12 @@
                             ?>
                                 <div class="row">
                                     <div>
-                                        <img src="uploads/agents/<?php echo $cby['agent_image'] ?>" style="width:60px; height:50px;" class="img-profile rounded-circle">
+                                        <img src="uploads/agents/<?php echo $cby['aimg'] ?>" style="width:60px; height:50px;" class="img-profile rounded-circle">
                                     </div>
                                     <div class="px-3">
-                                        <span><?php echo $cby['agent_fname'] ?></span>
+                                        <span><?php echo $cby['afname'] ?></span>
                                         <br>
-                                        <span><?php echo $gp['pkg_createDT'] ?></span>
+                                        <span><?php echo $cby['cdt'] ?></span>
                                     </div>
                                 </div>
                                 <br>

@@ -128,13 +128,16 @@ class tripntour
 	function pkg_createBY()
 	{
 		foreach ($this->get_pkgs() as $ab) {
+
 			$a = $ab['pkg_createBY'];
+			// echo $a;
 		}
 		// $sql = "SELECT * FROM agents INNER JOIN packages on agents.agent_id = packages.pkg_id";
-		$sql = "SELECT * from agents INNER JOIN packages on agents.agent_id = packages.pkg_createBY";
+		// $sql = "SELECT * from agents INNER JOIN packages on agents.agent_id = packages.pkg_createBY";
 		// $sql = "SELECT * from agents RIGHT JOIN packages on agents.agent_id = packages.pkg_createBY==$a";
 		// $sql = "SELECT * from agents RIGHT JOIN packages on agents.agent_id = (packages.pkg_createBY = $a)";
 		// $sql = "SELECT * from packages left JOIN agents on packages.pkg_createBY = agents.agent_id";
+		$sql = "SELECT a.agent_id aid, a.agent_fname afname, pk.pkg_createDT as cdt, a.agent_image as aimg FROM agents a LEFT JOIN packages pk ON a.agent_id = pk.pkg_createBY where agent_id = pkg_createBY";
 		$query = mysqli_query($this->connection(), $sql);
 		return $query;
 	}
