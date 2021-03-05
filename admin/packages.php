@@ -31,24 +31,24 @@
                             <p class="card-text">Price <b><?php echo $gp['pkg_price'] ?></b></p>
 
                             <?php
-                            $a = $gp['pkg_createBY'];
-                            foreach ($object->pkg_createBY() as $cby) {
+                            // $a = $gp['pkg_createBY'];
+                            // foreach ($object->pkg_createBY() as $cby) {
                             ?>
                                 <div class="row">
                                     <div>
-                                        <img src="uploads/agents/<?php echo $cby['aimg'] ?>" style="width:60px; height:50px;" class="img-profile rounded-circle">
+                                        <img src="uploads/agents/<?php //echo $cby['aimg'] ?>" style="width:60px; height:50px;" class="img-profile rounded-circle">
                                     </div>
                                     <div class="px-3">
-                                        <span><?php echo $cby['afname'] ?></span>
+                                        <span><?php //echo $cby['afname'] ?></span>
                                         <br>
-                                        <span><?php echo $cby['cdt'] ?></span>
+                                        <span><?php //echo $cby['cdt'] ?></span>
                                     </div>
                                 </div>
                                 <br>
                                 <button class="btn btn-primary btn-block">
                                     View More
                                 </button>
-                            <?php } ?>
+                            <?php //} ?>
                         </div>
                     </div>
                 </div>

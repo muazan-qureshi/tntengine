@@ -68,6 +68,50 @@ class tripntour
 		}
 	} //admin login end here
 
+	// Get all admins data
+	function get_admin()
+	{
+		$sql = "SELECT * FROM `admins`";
+		$query = mysqli_query($this->connection(), $sql);
+		return $query;
+	}
+	// Function end here
+
+	// get admin profile
+	function admin_profile()
+	{
+		$a = $_GET['adp'];
+		$sql = "SELECT * FROM `admins` WHERE admin_id = $a";
+		$query = mysqli_query($this->connection(), $sql);
+		return $query;
+	}
+	// Function end here
+
+	// get admin profile
+	function agent_profile()
+	{
+		$a = $_GET['agp'];
+		$sql = "SELECT * FROM `agents` WHERE agent_id = $a";
+		$query = mysqli_query($this->connection(), $sql);
+		return $query;
+	}
+	// Function end here
+
+	// Agent create BY
+	function addby()
+	{
+		foreach ($this->agent_profile() as $app) {
+			$b = $app['createBY'];
+			// echo $b;
+		}
+
+		$sql = "SELECT * FROM `admins` WHERE admin_id = $b";
+		$query = mysqli_query($this->connection(), $sql);
+		return $query;
+	}
+	// Function end
+
+
 	// get live user info
 	function logged_admin()
 	{
@@ -116,6 +160,30 @@ class tripntour
 	// add agent function end here
 
 
+	function get_agent()
+	{
+		$sql = "SELECT * FROM `agents`";
+		$query = mysqli_query($this->connection(), $sql);
+		return $query;
+	}
+	// Function end here
+
+	// for agents count
+	function agcount()
+	{
+		$sql = "Select * from agents";
+		$query = mysqli_query($this->connection(), $sql);
+		return $query;
+	}
+
+	// for admins count
+	function adcount()
+	{
+		$sql = "Select * from admins";
+		$query = mysqli_query($this->connection(), $sql);
+		return $query;
+	}
+
 	// Get packages for admin panel
 	function get_pkgs()
 	{
@@ -129,15 +197,16 @@ class tripntour
 	{
 		foreach ($this->get_pkgs() as $ab) {
 
-			$a = $ab['pkg_createBY'];
-			// echo $a;
+			$c = $ab['pkg_createBY'];
+			echo $c;
 		}
 		// $sql = "SELECT * FROM agents INNER JOIN packages on agents.agent_id = packages.pkg_id";
 		// $sql = "SELECT * from agents INNER JOIN packages on agents.agent_id = packages.pkg_createBY";
 		// $sql = "SELECT * from agents RIGHT JOIN packages on agents.agent_id = packages.pkg_createBY==$a";
 		// $sql = "SELECT * from agents RIGHT JOIN packages on agents.agent_id = (packages.pkg_createBY = $a)";
 		// $sql = "SELECT * from packages left JOIN agents on packages.pkg_createBY = agents.agent_id";
-		$sql = "SELECT a.agent_id aid, a.agent_fname afname, pk.pkg_createDT as cdt, a.agent_image as aimg FROM agents a LEFT JOIN packages pk ON a.agent_id = pk.pkg_createBY where agent_id = pkg_createBY";
+		// $sql = "SELECT a.agent_id aid, a.agent_fname afname, pk.pkg_createDT as cdt, a.agent_image as aimg FROM agents a LEFT JOIN packages pk ON a.agent_id = pk.pkg_createBY where agent_id = pkg_createBY";
+		$sql = "SELECT * FROM agents where agent_id = $c";
 		$query = mysqli_query($this->connection(), $sql);
 		return $query;
 	}
