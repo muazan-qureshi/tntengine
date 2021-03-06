@@ -210,6 +210,17 @@ class tripntour
 		$query = mysqli_query($this->connection(), $sql);
 		return $query;
 	}
+
+	//getting client queries
+	function client_query()
+	{
+		$sql = "SELECT * FROM `client_query`";
+		$query = mysqli_query($this->connection(), $sql);
+		return $query;
+	}
+	// function end here
+
+
 } // Class End
 #class tripntoue end here
 
