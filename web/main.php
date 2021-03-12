@@ -34,7 +34,59 @@ class tripntour
               </div>');
             }
         }
+    }//client query function end here
+
+    // client signup
+    // function c_signup()
+    // {
+    //     if(isset($_POST['c_signup']))
+    //     {
+    //         $a = $_POST['c_fname'];
+    //         // $b = $_POST['c_uname'];
+    //         $c = $_POST['c_email'];
+    //         $d = $_POST['c_phone'];
+    //         $e = $_POST['c_password'];
+
+    //         $sql = "INSERT INTO `clients`(`cl_fname`, `cl_email`, `cl_password`, `cl_phone`,) VALUES ('$a','$c','$e','$d')";
+    //         $query = mysqli_query($this->connection(), $sql);
+    //         if(!$query)
+    //         {
+    //            echo('<script>alert("error")</script>');
+    //         }
+    //         else
+    //         {      
+    //             // header('location:index.php');
+    //             echo('<script>alert("done")</script>');
+    //         }
+
+    //     }
+
+    // }
+    //function end here
+
+    function csup()
+    {
+        if(isset($_GET['btn']))
+        {
+            $a = $_GET['fname'];
+            $b = $_GET['uname'];
+            $c = $_GET['email'];
+            $d = $_GET['phone'];
+            $e = $_GET['password'];
+
+            $sql = "INSERT INTO `clients`(`cl_id`, `cl_fname`, `cl_uname`, `cl_email`, `cl_password`, `cl_phone`, `cl_createDT`) VALUES ('$a','$b','$c','$e','$d')";
+            $query = mysqli_query($this->connection(), $sql);
+            if(!$query){
+        echo('0');
+        
+        }
+        else{
+            echo ('1');
+            }
+        }
     }
+
+
 } //class end here
 
 $object = new tripntour;

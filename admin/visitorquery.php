@@ -5,6 +5,9 @@
 
 <section class="container">
 	<div>
+		<div class="h4">
+			Total Queries: <?php echo mysqli_num_rows($object->client_query())?>
+		</div>
 		<table class="table table-striped table-hover">
 			<thead>
 				<tr>
@@ -19,16 +22,16 @@
 			<tbody>
 				<?php
 				$srno = 1;
-				foreach ($object->visitor_query() as $vquery) {
+				foreach ($object->client_query() as $vquery) {
 					
 				?>
 				<tr>
 					<td><?php echo $srno ?></td>
-					<td><?php echo $vquery['id'] ?></td>
-					<td><?php echo $vquery['name'] ?></td>
-					<td><?php echo $vquery['email'] ?></td>
-					<td><?php echo $vquery['subject'] ?></td>
-					<td><?php echo $vquery['message'] ?></td>	
+					<td><?php echo $vquery['cq_id'] ?></td>
+					<td><?php echo $vquery['cq_name'] ?></td>
+					<td><?php echo $vquery['cq_email'] ?></td>
+					<td><?php echo $vquery['cq_subject'] ?></td>
+					<td><?php echo $vquery['cq_message'] ?></td>	
 				</tr>
 				<?php
 				$srno++;

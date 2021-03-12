@@ -1,7 +1,7 @@
 <?php include('main.php');
 $object->agentlogin();
 
-if ($_SESSION['liveagent'] ) {
+if (isset($_SESSION['liveagent']) ) {
     echo "<script>window.location.href='index.php'</script>";
 }
 
@@ -56,13 +56,13 @@ if ($_SESSION['liveagent'] ) {
                                         <div class="form-group">
                                             <input type="password" name="password" class="form-control form-control-user" placeholder="Password">
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                                 <label class="custom-control-label" for="customCheck">Remember
                                                     Me</label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <button type="submit" name="agent_login" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>

@@ -2,7 +2,7 @@
 
 $object->login_admin();
 
-if($_SESSION['admin_log'])
+if(isset($_SESSION['admin_log']))
 {
     echo('<script>window.location.href="index.php"</script>');
 }
