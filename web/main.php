@@ -84,7 +84,18 @@ class tripntour
             echo ('1');
             }
         }
+    }//function end here
+
+
+
+    // Function for packages on website
+    function getpkgs()
+    {
+        $sql = "SELECT * FROM `packages`";
+        $query = mysqli_query($this->connection(), $sql);
+        return $query;
     }
+
 
 
 } //class end here

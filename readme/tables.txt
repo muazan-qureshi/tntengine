@@ -71,3 +71,11 @@ create TABLE clients
     cl_phone varchar(20),
     cl_createDT timestamp
 )
+
+newsletter table form web
+CREATE TABLE newsletter
+(
+    nlid int AUTO_INCREMENT PRIMARY KEY,
+    nlemail varchar(50),
+    nlcreateDT timestamp
+)

@@ -190,12 +190,19 @@
     <div class="row justify-content-start mb-5 pb-3">
       <div class="col-md-7 heading-section ftco-animate">
         <span class="subheading">Special Offers</span>
-        <h2 class="mb-4"><strong>Top</strong> Tour Packages</h2>
+        <h2 class="mb-4"><strong>Top</strong> Tour Packages Muazan</h2>
       </div>
     </div>
   </div>
   <div class="container-fluid">
     <div class="row">
+      
+<!-- CArds form Database -->
+      <?php
+      foreach ($object->getpkgs() as $gpkg) {
+      
+      ?>
+
       <div class="col-sm col-md-6 col-lg ftco-animate">
         <div class="destination">
           <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-1.jpg);">
@@ -206,7 +213,7 @@
           <div class="text p-3">
             <div class="d-flex">
               <div class="one">
-                <h3><a href="#">Paris, Italy</a></h3>
+                <h3><a href="#"><?php echo $gpkg['pkg_name']?></a></h3>
                 <p class="rate">
                   <i class="icon-star"></i>
                   <i class="icon-star"></i>
@@ -217,11 +224,11 @@
                 </p>
               </div>
               <div class="two">
-                <span class="price">$200</span>
+                <span class="price"><b><?php echo $gpkg['pkg_price']?></b></span>
               </div>
             </div>
             <p>Far far away, behind the word mountains, far from the countries</p>
-            <p class="days"><span>2 days 3 nights</span></p>
+            <p class="days"><span><?php echo $gpkg['pkg_day']?> days <?php echo $gpkg['pkg_night']?> nights</span></p>
             <hr>
             <p class="bottom-area d-flex">
               <span><i class="icon-map-o"></i> San Franciso, CA</span>
@@ -230,7 +237,14 @@
           </div>
         </div>
       </div>
-      <div class="col-sm col-md-6 col-lg ftco-animate">
+      <?php
+        }
+      ?>
+      <!-- Card end here -->
+
+
+
+      <!-- <div class="col-sm col-md-6 col-lg ftco-animate">
         <div class="destination">
           <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-2.jpg);">
             <div class="icon d-flex justify-content-center align-items-center">
@@ -365,7 +379,7 @@
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -859,10 +873,10 @@
           <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
           <div class="row d-flex justify-content-center mt-5">
             <div class="col-md-8">
-              <form action="#" class="subscribe-form">
+              <form action="main.php" method="post" class="subscribe-form">
                 <div class="form-group d-flex">
-                  <input type="text" class="form-control" placeholder="Enter email address">
-                  <input type="submit" value="Subscribe" class="submit px-3">
+                  <input type="text" name="nlemail" id="nlemail" class="form-control" placeholder="Enter email address">
+                  <input type="submit" id="nlbtn" value="Subscribe" class="submit px-3">
                 </div>
               </form>
             </div>
