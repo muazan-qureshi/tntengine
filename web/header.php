@@ -36,10 +36,11 @@
           <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
           <li class="nav-item"><a href="tour.php" class="nav-link">Tour</a></li>
           <li class="nav-item"><a href="hotel.php" class="nav-link">Hotels</a></li>
-          <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="blog.php" class="nav-link">Posts</a></li>
           <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
           <!-- Register Button -->
           <li class="nav-item cta"><a href="register.php" class="nav-link"><span>Sign Up</span></a></li>
+          
         </ul>
       </div>
     </div>

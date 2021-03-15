@@ -81,6 +81,21 @@ class tripntour
       }
     }
   }
+
+  // Function for logged in agent packages
+  function mypkgs(){
+
+    foreach ($this->user_live() as $lorem) {
+        $by = $lorem['agent_id'];
+      }
+
+      $sql = "SELECT * FROM packages WHERE pkg_createBY = '$by'";
+      $query = mysqli_query($this->connection(), $sql);
+      return $query;
+
+    
+  }
+  
 } // class "auction_tours" end here
 
 $object = new tripntour;
