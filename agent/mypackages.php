@@ -10,7 +10,8 @@
 		?>
 		<div class="col-sm col-md-6 col-lg-4 ftco-animate">
 	        <div class="destination">
-	          <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-1.jpg);">
+	          <!-- <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url();"> -->
+	          	<img src="<?php echo "uploads/pkg/thumbnail/".$mypkg['pkg_thumbnail'];?>" class="img-fluid">
 	            <div class="icon d-flex justify-content-center align-items-center">
 	              <span class="icon-search2"></span>
 	            </div>
@@ -18,7 +19,7 @@
 	          <div class="text p-3">
 	            <div class="d-flex">
 	              <div class="one">
-	                <h3><a href="#"><?php echo $mypkg['pkg_name']?></a></h3>
+	                <h3><a href="package_detail.php?pkid=<?php echo $mypkg['pkg_id']?>"><?php echo $mypkg['pkg_name']?></a></h3>
 	                <p class="rate">
 	                  <i class="icon-star"></i>
 	                  <i class="icon-star"></i>

@@ -57,18 +57,20 @@ class tripntour
       $g = $_POST['desc'];
       $h = $_POST['person'];
       $i = $_POST['location'];
+      $j = $_FILES['thumbnail']['name'];
 
       foreach ($this->user_live() as $lorem) {
         $by = $lorem['agent_id'];
       }
       $imgs = json_encode($_FILES['image']['name']);
-      $sql = "INSERT INTO `packages`(`pkg_name`, `pkg_createBY`, `pkg_location`,`pkg_from`, `pkg_to`, `pkg_price`, `pkg_day`, `pkg_night`, `pkg_image`, `pkg_description`, `pkg_person`) VALUES ('$a','$by','$i','$b','$c','$d','$e','$f','$imgs','$g','$h')";
+      $sql = "INSERT INTO `packages`(`pkg_name`, `pkg_createBY`, `pkg_location`,`pkg_from`, `pkg_to`, `pkg_price`, `pkg_day`, `pkg_night`, `pkg_image`,`pkg_thumbnail`, `pkg_description`, `pkg_person`) VALUES ('$a','$by','$i','$b','$c','$d','$e','$f','$imgs','$j','$g','$h')";
       $query = mysqli_query($this->connection(), $sql);
 
       if (!$query) {
-        echo ('<script>alert("Sorry SOme Went Wrong")</script>');
+        echo ('<script>alert("Sorry Some Went Wrong")</script>');
       } else {
 
+        
         $count = count($_FILES['image']['name']);
 
         for ($i = 0; $i < $count; $i++) {
@@ -76,7 +78,7 @@ class tripntour
           $path = "uploads/pkg/" . $_FILES['image']['name'][$i];
           move_uploaded_file($tmp, $path);
         }
-
+        move_uploaded_file($_FILES['thumbnail']['tmp_name'], "uploads/pkg/thumbnail/".$_FILES['thumbnail']['name']);
         echo ('<script>alert("Package Added Successfully")</script>');
       }
     }
@@ -92,10 +94,36 @@ class tripntour
       $sql = "SELECT * FROM packages WHERE pkg_createBY = '$by'";
       $query = mysqli_query($this->connection(), $sql);
       return $query;
-
     
   }
-  
+  //function end here
+
+
+  //function for package details
+    function pkg_detail()
+    {
+        $pkg = $_GET['pkid'];
+
+        $sql = "SELECT * FROM `packages` WHERE pkg_id = '$pkg'";
+        $query = mysqli_query($this->connection(), $sql);
+        return $query;
+    }
+    //function end here
+
+    //function for my packages
+    function mypkgs_count()
+    {
+      foreach ($this->user_live() as $lorem) {
+        $by = $lorem['agent_id'];
+      }
+
+      $sql = "SELECT * FROM `packages` WHERE pkg_createBY = '$by'";
+      $query = mysqli_query($this->connection(), $sql);
+      return $query;
+    }
+
+
+
 } // class "auction_tours" end here
 
 $object = new tripntour;

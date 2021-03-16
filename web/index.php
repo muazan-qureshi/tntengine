@@ -203,9 +203,9 @@
       
       ?>
 
-      <div class="col-sm col-md-6 col-lg ftco-animate">
+      <div class="col-sm col-md-2 col-lg ftco-animate">
         <div class="destination">
-          <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/destination-1.jpg);">
+          <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(<?php echo "../agent/uploads/pkg/thumbnail/".$gpkg['pkg_thumbnail']?>);">
             <div class="icon d-flex justify-content-center align-items-center">
               <span class="icon-search2"></span>
             </div>

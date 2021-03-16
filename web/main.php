@@ -36,33 +36,7 @@ class tripntour
         }
     }//client query function end here
 
-    // client signup
-    // function c_signup()
-    // {
-    //     if(isset($_POST['c_signup']))
-    //     {
-    //         $a = $_POST['c_fname'];
-    //         // $b = $_POST['c_uname'];
-    //         $c = $_POST['c_email'];
-    //         $d = $_POST['c_phone'];
-    //         $e = $_POST['c_password'];
-
-    //         $sql = "INSERT INTO `clients`(`cl_fname`, `cl_email`, `cl_password`, `cl_phone`,) VALUES ('$a','$c','$e','$d')";
-    //         $query = mysqli_query($this->connection(), $sql);
-    //         if(!$query)
-    //         {
-    //            echo('<script>alert("error")</script>');
-    //         }
-    //         else
-    //         {      
-    //             // header('location:index.php');
-    //             echo('<script>alert("done")</script>');
-    //         }
-
-    //     }
-
-    // }
-    //function end here
+   
 
     function csup()
     {
@@ -94,6 +68,21 @@ class tripntour
         $sql = "SELECT * FROM `packages`";
         $query = mysqli_query($this->connection(), $sql);
         return $query;
+    }
+    //function end here
+
+    //function from string to array
+    function expo()
+    {
+        if(isset($_POST['btn']))
+        {
+            $a = json_encode(explode(".", $_POST['name']));
+
+            $sql = "INSERT INTO `tester`(`name`) VALUES ('$a')";
+            $query = mysqli_query($this->connection(), $sql);
+            return $query;    
+        }
+         
     }
 
 

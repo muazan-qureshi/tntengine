@@ -44,8 +44,13 @@
       <div class="form-group col-md-12">
         <textarea class="form-control" name="desc" placeholder="Description"></textarea>
       </div>
-      <div class="form-group col-md-12">
-        <input type="file" multiple="true" class="form-group" name="image[]">
+      <div class="form-group col-md-6">
+        <label>Thumbnail</label>
+        <input type="file" class="form-control" name="thumbnail">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Images</label>
+        <input type="file" multiple="true" class="form-control" name="image[]">
       </div>
         <button type="submit" name="addpkg_btn" class="btn-block btn btn-primary">
           Add Package
