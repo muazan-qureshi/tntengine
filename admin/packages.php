@@ -14,17 +14,17 @@
                     <div class="card text-left">
                         <div class="card-header p-0">
                             <?php
-                            $img = json_decode($gp['pkg_image']);
-                            $count = count(json_decode($gp['pkg_image']));
-                            for ($i = 0; $i < $count; $i++) {
+                            $img = $gp['pkg_thumbnail'];
+                            // $count = count(json_decode($gp['pkg_thumbnail']));
+                            // for ($i = 0; $i < $count; $i++) {
 
                             ?>
                                 <div class="carousel-item active">
-                                    <img src="../agent/uploads/pkg/<?php echo $img[$i] ?>" class="img-fluid" alt="">
+                                    <img src="../agent/uploads/pkg/thumbnail/<?php echo $img ?>" class="img-fluid" alt="">
 
                                 </div>
 
-                            <?php } ?>
+                            <?php //} ?>
                         </div>
                         <div class="card-body">
                             <h4 class="card-title"><?php echo $gp['pkg_name'] ?></h4>

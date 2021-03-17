@@ -219,6 +219,15 @@ class tripntour
 		return $query;
 	}
 	// function end here
+	// function for total citiess count
+	function totalcities()
+	{
+		$sql = "SELECT * from `city`";
+		$query = mysqli_query($this->connection(), $sql);
+		return $query;	
+	}
+	// function end here
+
 
 
 } // Class End

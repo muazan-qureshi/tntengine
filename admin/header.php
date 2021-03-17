@@ -130,6 +130,12 @@ foreach ($object->logged_admin() as $adminn) {
                     <span>Clients Query</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="cities.php">
+                    <i class="fa fa-city" aria-hidden="true"></i>
+                    <span>Cities</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

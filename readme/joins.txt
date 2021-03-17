@@ -1,0 +1,7 @@
+SELECT `admin_id`, `admin_fname`, `admin_uname`, `admin_email`, `admin_phone`, `admin_cnic`, `admin_password`, `admin_fathername`, `admin_gender`, `admin_dob`, `admin_image`, `createDT`, `admin_address`, `status` FROM `admins` 
+
+
+SELECT `pkg_id`, `pkg_name`, `pkg_createBY`, `pkg_ttype`, `pkg_location`, `pkg_createDT`, `pkg_from`, `pkg_to`, `pkg_price`, `pkg_day`, `pkg_night`, `pkg_image`, `pkg_thumbnail`, `pkg_description`, `pkg_person` FROM `packages` 
+
+
+SELECT `agent_id`, `agent_fname`, `agent_uname`, `agent_email`, `agent_phone`, `agent_cnic`, `agent_password`, `agent_fathername`, `agent_company`, `agent_gender`, `agent_dob`, `agent_image`, `createDT`, `createBY`, `agent_address`, `agent_location`, `status` FROM `agents

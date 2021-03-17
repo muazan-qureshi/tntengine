@@ -57,13 +57,14 @@ class tripntour
       $g = $_POST['desc'];
       $h = $_POST['person'];
       $i = $_POST['location'];
+      $re = $_POST['ttype'];
       $j = $_FILES['thumbnail']['name'];
 
       foreach ($this->user_live() as $lorem) {
         $by = $lorem['agent_id'];
       }
       $imgs = json_encode($_FILES['image']['name']);
-      $sql = "INSERT INTO `packages`(`pkg_name`, `pkg_createBY`, `pkg_location`,`pkg_from`, `pkg_to`, `pkg_price`, `pkg_day`, `pkg_night`, `pkg_image`,`pkg_thumbnail`, `pkg_description`, `pkg_person`) VALUES ('$a','$by','$i','$b','$c','$d','$e','$f','$imgs','$j','$g','$h')";
+      $sql = "INSERT INTO `packages`(`pkg_name`, `pkg_createBY`, `pkg_location`,`pkg_ttype`,`pkg_from`, `pkg_to`, `pkg_price`, `pkg_day`, `pkg_night`, `pkg_image`,`pkg_thumbnail`, `pkg_description`, `pkg_person`) VALUES ('$a','$by','$i','$re','$b','$c','$d','$e','$f','$imgs','$j','$g','$h')";
       $query = mysqli_query($this->connection(), $sql);
 
       if (!$query) {
@@ -121,7 +122,26 @@ class tripntour
       $query = mysqli_query($this->connection(), $sql);
       return $query;
     }
+    // 
 
+
+    // function for total citiess count
+  function totalcities()
+  {
+    $sql = "SELECT * from `city`";
+    $query = mysqli_query($this->connection(), $sql);
+    return $query;  
+  }
+  // function end here
+
+    // function for Tour Package Type
+  function ttype()
+  {
+    $sql = "SELECT * from `travel_type`";
+    $query = mysqli_query($this->connection(), $sql);
+    return $query;  
+  }
+  // function end here
 
 
 } // class "auction_tours" end here
