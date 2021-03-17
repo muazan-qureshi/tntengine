@@ -192,24 +192,36 @@ class tripntour
 		return $query;
 	}
 
-
+	//function for package created by
 	function pkg_createBY()
 	{
-		foreach ($this->get_pkgs() as $ab) {
+		// foreach ($this->get_pkgs() as $ab) {
 
-			$c = $ab['pkg_createBY'];
-			echo $c;
-		}
+		// 	$c = $ab['pkg_createBY'];
+		// 	// echo $c;
+		// }
 		// $sql = "SELECT * FROM agents INNER JOIN packages on agents.agent_id = packages.pkg_id";
 		// $sql = "SELECT * from agents INNER JOIN packages on agents.agent_id = packages.pkg_createBY";
 		// $sql = "SELECT * from agents RIGHT JOIN packages on agents.agent_id = packages.pkg_createBY==$a";
 		// $sql = "SELECT * from agents RIGHT JOIN packages on agents.agent_id = (packages.pkg_createBY = $a)";
 		// $sql = "SELECT * from packages left JOIN agents on packages.pkg_createBY = agents.agent_id";
 		// $sql = "SELECT a.agent_id aid, a.agent_fname afname, pk.pkg_createDT as cdt, a.agent_image as aimg FROM agents a LEFT JOIN packages pk ON a.agent_id = pk.pkg_createBY where agent_id = pkg_createBY";
-		$sql = "SELECT * FROM agents where agent_id = $c";
+		// $sql = "SELECT a.agent_id,a.agent_uname,a.agent_image,p.pkg_createDT, p.pkg_id  from agents a INNER JOIN packages p on a.agent_id = p.pkg_createBY";
+		$sql = "SELECT `agent_id`, `agent_fname`, `agent_uname`, `agent_email`, `agent_phone`, `agent_cnic`, `agent_password`, `agent_fathername`, `agent_company`, `agent_gender`, `agent_dob`, `agent_image`, `createDT`, `createBY`, `agent_address`, `agent_location`, `status` ,`pkg_id`, `pkg_name`, `pkg_createBY`, `pkg_ttype`, `pkg_location`, `pkg_createDT`, `pkg_from`, `pkg_to`, `pkg_price`, `pkg_day`, `pkg_night`, `pkg_image`, `pkg_thumbnail`, `pkg_description`, `pkg_person` FROM packages p inner join agents a on a.agent_id = p.pkg_createBY";
+		$query = mysqli_query($this->connection(), $sql);
+		// $quuery = mysql_fetch_assoc($query);
+		return $query;
+	}//function end here
+
+	// function for package detail get by pkgid
+	function pkgdetailid()
+	{
+		$ab = $_GET['pkgid'];
+		$sql = "SELECT `agent_id`, `agent_fname`, `agent_uname`, `agent_email`, `agent_phone`, `agent_cnic`, `agent_password`, `agent_fathername`, `agent_company`, `agent_gender`, `agent_dob`, `agent_image`, `createDT`, `createBY`, `agent_address`, `agent_location`, `status` ,`pkg_id`, `pkg_name`, `pkg_createBY`, `pkg_ttype`, `pkg_location`, `pkg_createDT`, `pkg_from`, `pkg_to`, `pkg_price`, `pkg_day`, `pkg_night`, `pkg_image`, `pkg_thumbnail`, `pkg_description`, `pkg_person` FROM packages p inner join agents a on a.agent_id = p.pkg_createBY WHERE pkg_id = '$ab'";
 		$query = mysqli_query($this->connection(), $sql);
 		return $query;
 	}
+	//function end here
 
 	//getting client queries
 	function client_query()

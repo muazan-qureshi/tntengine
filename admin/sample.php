@@ -1,5 +1,12 @@
 <?php include('header.php'); 
-                           
+
+
+     // $a = $gp['pkg_createBY'];
+    foreach ($object->pkg_createBY() as $cby) {
+        $a = $cby['agent_image'];
+        $b = $cby['agent_uname'];
+        $c = $cby['pkg_createDT'];
+    }                            
 
 ?>
 
@@ -11,15 +18,23 @@
         <div class="row">
 
             <?php
-            foreach ($object->pkg_createBY() as $gp) {
+            foreach ($object->get_pkgs() as $gp) {
             ?>
                 <div class="col-12 col-lg-4">
                     <div class="card text-left">
                         <div class="card-header p-0">
-                            
+                            <?php
+                            $img = $gp['pkg_thumbnail'];
+                            // $count = count(json_decode($gp['pkg_thumbnail']));
+                            // for ($i = 0; $i < $count; $i++) {
+
+                            ?>
                                 <div class="carousel-item active">
-                                    <img src="../agent/uploads/pkg/thumbnail/<?php echo $gp['pkg_thumbnail']  ?>" class="img-fluid" alt="">
+                                    <img src="../agent/uploads/pkg/thumbnail/<?php echo $img ?>" class="img-fluid" alt="">
+
                                 </div>
+
+                            <?php //} ?>
                         </div>
                         <div class="card-body">
                             <h4 class="card-title"><?php echo $gp['pkg_name'] ?></h4>
@@ -28,18 +43,18 @@
                             
                                 <div class="row">
                                     <div>
-                                         <img src="uploads/agents/<?php echo $gp['agent_image']  ?>" style="width:60px; height:50px;" class="img-profile rounded-circle">
+                                         <img src="uploads/agents/<?php echo $a  ?>" style="width:60px; height:50px;" class="img-profile rounded-circle">
                                     </div>
                                     <div class="px-3">
-                                        <span><?php echo $gp['agent_uname'] ?></span>
+                                        <span><?php echo $b ?></span>
                                         <br>
-                                        <span><?php echo $gp['pkg_createDT'] ?></span>
+                                        <span><?php echo $c ?></span>
                                     </div>
                                 </div>
                                 <br>
-                                <a href="package_detail.php?pkgid=<?php echo $gp['pkg_id']?>" class="btn btn-primary btn-block">
+                                <button class="btn btn-primary btn-block">
                                     View More
-                                </a>
+                                </button>
                       
                         </div>
                     </div>
