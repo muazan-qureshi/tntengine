@@ -227,3 +227,10 @@ INSERT INTO Book1 VALUES
     ('Aliabad'),
     ('Awaran'),
     ('Dalbandin');
+
+
+-------------------------------
+create TABLE pkg_status(
+    ps_id int,
+    ps_type varchar(50)
+)

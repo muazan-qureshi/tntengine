@@ -11,11 +11,11 @@ class tripntour
 	// connection end here
 
 	// function for getting status id
-	function forstatus()
+	function status()
 	{
-		$sql = "Select * from status";
+		$sql = "SELECT * FROM `status`";
 		$query = mysqli_query($this->connection(), $sql);
-		return $sql;
+		return $query;
 	} //function end here
 
 	// add admin function begin here

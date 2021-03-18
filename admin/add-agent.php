@@ -74,10 +74,15 @@ $object->insert_agent();
         <label for="">Status</label>
         <select class="form-control" name="status" id="" required>
         <option value="" disabled selected>Choose Status</option>
-          <option value="0">Deactive</option>
-          <option value="1">Active</option>
+          
+        <?php
+        foreach ($object->status() as $key) {
+        ?>
+          <option value="<?php echo $key['status_id']?>"><?php echo $key['status_type']?></option>
+        <?php } ?>
+         <!--  <option value="1">Active</option>
           <option value="2">Left</option>
-          <option value="3">Blocked</option>
+          <option value="3">Blocked</option> -->
         </select>
       </div>
       <div class="form-group col-md-12">
