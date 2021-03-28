@@ -19,8 +19,8 @@
             <li><a href="#" class="py-2 d-block">About</a></li>
             <li><a href="#" class="py-2 d-block">Service</a></li>
             <li><a href="#" class="py-2 d-block">Terms and Conditions</a></li>
-            <li><a href="#" class="py-2 d-block">Become a partner</a></li>
-            <li><a href="#" class="py-2 d-block">Best Price Guarantee</a></li>
+            <li><a href="#" class="py-2 d-block">Become an Agent</a></li>
+            <li><a href="#" class="py-2 d-block">Our Agents</a></li>
             <li><a href="#" class="py-2 d-block">Privacy and Policy</a></li>
           </ul>
         </div>
@@ -33,7 +33,8 @@
             <li><a href="#" class="py-2 d-block">Payment Option</a></li>
             <li><a href="#" class="py-2 d-block">Booking Tips</a></li>
             <li><a href="#" class="py-2 d-block">How it works</a></li>
-            <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+            <li><a href="contact.php" class="py-2 d-block">Contact Us</a></li>
+            <li><a href="#" class="py-2 d-block">Feedbacks</a></li>
           </ul>
         </div>
       </div>

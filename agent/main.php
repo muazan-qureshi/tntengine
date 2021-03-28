@@ -144,6 +144,15 @@ class tripntour
   // function end here
 
 
+  // function for Tour Package status
+  function pkgstatus()
+  {
+    $sql = "SELECT * from `pkg_status`";
+    $query = mysqli_query($this->connection(), $sql);
+    return $query;  
+  }
+  // function end here
+
 } // class "auction_tours" end here
 
 $object = new tripntour;

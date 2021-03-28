@@ -17,7 +17,7 @@
         <label for="">Price</label>
         <input type="text" name="price" class="form-control" value="" required>
       </div>
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-3">
         <label for="">Tour Type</label>
         <select name="ttype" class="form-control"  required> 
           <option selected disabled>
@@ -31,16 +31,30 @@
           </option>
           <?php } ?>
         </select>
-        </select>
       </div>
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-3">
         <label for="">Persons</label>
         <input type="text" name="person" class="form-control" value="" required>
       </div>
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-3">
         <label for="">Location</label>
         <input type="text" name="location" class="form-control" value="" required>
       </div>
+      <!-- <div class="form-group col-md-3">
+        <label for="">Tour Type</label>
+        <select name="ttype" class="form-control"  required> 
+          <option selected disabled>
+            Select the Tour Type
+          </option>
+          <?php 
+          foreach ($object->pkgstatus() as $op) {
+          ?>
+          <option>
+            <?php echo $op['ps_type']?>
+          </option>
+          <?php } ?>
+        </select>
+      </div> -->
       <div class="form-group col-md-4">
         <label for="">From</label>
         <!-- <input type="text" name="from" class="form-control" value=""> -->
@@ -92,6 +106,16 @@
         <label>Images</label>
         <input type="file" multiple="true" required class="form-control" name="image[]">
       </div>
+      <div class="col-md-12 form-group">
+      <!-- <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" class="form-control" data-role="tagsinput" /> -->
+        <!-- <input class="input-tags" name="tags" type="text" data-role="tagsinput"> -->
+        <input class="form-control" type="text" value="" name="tags" data-role="tagsinput"  placeholder="Add tags" />
+
+      </div>
+      <hr> 
+      
+
+      <br>
         <button type="submit" name="addpkg_btn" class="btn-block btn btn-primary">
           Add Package
         </button>
@@ -99,6 +123,7 @@
 
   </form>
 </section>
+
 
 
 <?php include('footer.php'); ?>
